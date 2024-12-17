@@ -1,0 +1,50 @@
+{# templates/admin/dashboard.html.twig #}
+{% extends '@EasyAdmin/page/content.html.twig' %}
+
+
+{% block content %}
+    <h1>Welcome to the Dashboard</h1>
+    <p class="text-muted">Here you can monitor key data and navigate through your application.</p>
+{% endblock %}
+
+{% block main %}
+    <div class="container mt-4">
+        <div class="row">
+            <!-- Bookings Overview -->
+            <div class="col-md-4">
+                <div class="card border-primary mb-3">
+                    <div class="card-header">Bookings</div>
+                    <div class="card-body text-primary">
+                        <h5 class="card-title">{{ bookingCount }} Total Bookings</h5>
+                        <p class="card-text">Manage all bookings from the bookings section.</p>
+                        <a href="{{ path('admin_crud_booking') }}" class="btn btn-primary">View Bookings</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Events Overview -->
+            <div class="col-md-4">
+                <div class="card border-success mb-3">
+                    <div class="card-header">Events</div>
+                    <div class="card-body text-success">
+                        <h5 class="card-title">{{ eventCount }} Total Events</h5>
+                        <p class="card-text">View and manage upcoming events.</p>
+                        <a href="{{ path('admin_crud_event') }}" class="btn btn-success">View Events</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Users Overview -->
+            <div class="col-md-4">
+                <div class="card border-info mb-3">
+                    <div class="card-header">Users</div>
+                    <div class="card-body text-info">
+                        <h5 class="card-title">{{ userCount }} Registered Users</h5>
+                        <p class="card-text">Manage user accounts and permissions.</p>
+                        <a href="{{ path('admin_crud_user') }}" class="btn btn-info">View Users</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

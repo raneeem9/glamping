@@ -1,0 +1,357 @@
+html{
+  scroll-behavior: smooth;
+}
+/* Hide the element by default */
+.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+/* Reveal the element when the "revealed" class is added */
+.revealed {
+  opacity: 1;
+  transform: translateY(0);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  transition-delay: 0.1s;
+}
+
+/* animation */
+@keyframes slideRight {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideLeft {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideTop {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideBottom {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes Zoom {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+/* Description */
+.titre {
+  font-family: "Poppins", sans-serif;
+    font-weight: 600;
+
+}
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: #582707;
+  margin-top: 150px;
+}
+.descri {
+  font-family: "Play", sans-serif;
+  font-size: 30px;
+  color: #582707;
+}
+body {
+  background-color: rgb(243, 242, 239);
+}
+/* navbare */
+.navbare {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 920px;
+  height: 120px;
+  box-shadow: 20px 20px 60px rgb(124, 124, 124);
+  background-color: #fff;
+}
+
+.navbare .btn {
+  background-color: #326423;
+  line-height: 14px;
+  letter-spacing: 1.2px;
+}
+
+/* navbare input style */
+.inputGroup {
+  font-family: "Segoe UI", sans-serif;
+  margin: 1em 0 1em 0;
+  width: 100%;
+  position: relative;
+}
+
+.inputGroup input {
+  font-size: 100%;
+  padding: 0.8em;
+  outline: none;
+  border: 2px solid rgb(200, 200, 200);
+  background-color: inherit;
+  border-radius: 20px;
+  width: 100%;
+}
+
+.inputGroup label {
+  font-size: 100%;
+  position: absolute;
+  left: 0;
+  padding: 0.8em;
+  margin-left: 0.5em;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  color: rgb(100, 100, 100);
+  font-family: "Play";
+}
+
+.inputGroup :is(input:focus, input:valid) ~ label {
+  transform: translateY(-50%) scale(0.9);
+  margin: 0em;
+  margin-left: 1.3em;
+  padding: 0.4em;
+  background-color: #fff;
+}
+
+.inputGroup :is(input:focus, input:valid) {
+  border-color: #1c3a13;
+}
+
+/* carousel  */
+.carousel {
+  width: 1040px;
+  height: 600px;
+  max-height: 600px;
+}
+.carousel .carousel-item {
+  height: 600px;
+}
+.carousel h5 {
+  font-family: "Pathway Extreme", sans-serif;
+  font-size: 40px;
+  background-color: transparent;
+  backdrop-filter: blur(2px);
+}
+.carousel p {
+  color: #ffffff;
+  font-size: 25px;
+  backdrop-filter: blur(2px);
+}
+
+.flip-card {
+  
+  margin-top: 10%;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.flip-card-front img,
+.flip-card-back {
+  border-radius: 15px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-back {
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.taille {
+  width: 150px;
+  height: 250px;
+}
+
+
+.Clamping {
+  margin: 10%;
+  background-color: white;
+  width: 1200px;
+  height: 500px;
+  border-radius: 30px;
+}
+.Clamping p {
+  text-align: center;
+  font-size: 30px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", "Arial", "sans-serif";
+  padding: 30px;
+}
+
+.image_event {
+  width: 450px;
+  height: 300px;
+  margin: 0px;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+}
+.description_evenet {
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  background-color: white;
+  margin-left: 75px;
+  width: 450px;
+}
+
+.img-catalogue {
+  width: 100%;
+  height: 50%;
+  background: rgb(223, 225, 235);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card-catalogue {
+  padding: -10%;
+  width: 100%;
+  height: 500px;
+}
+.card-catalogue:hover {
+  transform: scale(1.015);
+  transition: 0.2s;
+}
+
+.card-description {
+  background-color: rgb(129, 80, 98);
+  display: flex;
+
+  flex-direction: column;
+  border-radius: 0px 0px 24px 24px;
+  padding: 24px 32px;
+  color: #ffffff;
+}
+
+.img-map {
+  margin-top: -5%;
+  margin-left: 5%;
+  width: 1200px;
+  height: 600px;
+  z-index: 0;
+
+  border-radius: 10px;
+}
+.map-card {
+  padding: 30px;
+  background-color: rgb(193, 108, 47);
+  display: flex;
+  flex-direction: column;
+  border-radius: 24px;
+  color: #ffffff;
+  margin-top: -200px;
+  margin-left: 10%;
+  z-index: 1;
+  position: relative;
+  width: 350px;
+  height: 150px;
+}
+.map-card:hover {
+  transform: scale(1.02);
+  transition: 0.2s;
+}
+.style_ecriture {
+  font-size: 18px;
+  font-family: Franklin Gothic Medium;
+}
+
+.button_card {
+  width: 70%;
+  height: 50%;
+  padding: 0.7em 1.7em;
+  font-size: 18px;
+  border-radius: 0.5em;
+  background: #e8e8e8;
+  border: 1px solid #e8e8e8;
+  transition: all 0.3s;
+  box-shadow: 3px 3px 6px #c5c5c5, -2px -2px 6px #ffffff;
+}
+
+.button_card:hover {
+  border: 1px solid white;
+}
+.img-near {
+  margin-left: 10%;
+  width: 80%;
+  height: 350px;
+  border-radius: 10px;
+}
+
+.bouton_near {
+  width: 40%;
+  color: white;
+  height: 15%;
+  padding: 0.7em 1.7em;
+  font-size: 18px;
+  border-radius: 0.5em;
+  border: 1px solid #e8e8e8;
+  box-shadow: 3px 3px 6px #c5c5c5, -2px -2px 6px #ffffff;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -90%);
+}
+.img-near:hover {
+  transform: scale(1.02);
+  transition: 0.2s;
+}

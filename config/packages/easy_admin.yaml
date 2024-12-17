@@ -1,0 +1,11 @@
+easy_admin:
+    design:
+        theme: 'default' # Choose the theme you want: 'default', 'dark', etc.
+        assets: # If you have a logo, you can specify it here.
+            favicon: 'C:\xampp\htdocs\symphony\Glamping\public\assets\favicon\favicon.ico' # Favicon for your dashboard.
+            css: 'C:\xampp\htdocs\symphony\Glamping\public\assets\css\custom.css'
+    dashboard:
+        title: 'Glamping Admin Dashboard' # Title of the dashboard.
+        favicon: 'C:\xampp\htdocs\symphony\Glamping\public\assets\favicon\favicon.ico' # Optional favicon for your dashboard.
+    
+   

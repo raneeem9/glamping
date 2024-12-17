@@ -1,0 +1,114 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Settings{% endblock %}
+{% block stylesheets %} <link rel="stylesheet" href="/assets/css/settings.css" /> {% endblock %}
+{% block javascripts %}
+  <script src="{{ asset('assets/js/Settings.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+
+
+
+
+    <section class="main">
+      <h1 class="title">Your Informations</h1>
+      <a href="{{ path('app_profile') }}" class="back"> Go Back  <i class="fa-solid fa-circle-chevron-right"></i></a>
+      <form action="{{ path('app_user_update') }}" method="post">
+        <div class="main-box">
+          <div class="input-box">
+            <span class="text">Full Name</span>
+            <input type="text" placeholder="Please enter your name" value="{{user.fullName}}" name="fullname"  />
+          </div>
+          <div class="input-box">
+            <span class="text">User Name</span>
+            <input type="text" placeholder="User Name" value="{{user.name}}" name="username" required />
+          </div>
+          <div class="input-box">
+            <span class="text">Address</span>
+            <input type="text" placeholder="your adress" value="{{user.address}}" name="address" />
+          </div>
+          <div class="input-box">
+            <span class="text">Phone Number </span>
+            <input
+              id="tel"
+              type="tel"
+              placeholder="Please enter your phone"
+              value="{{user.phone}}"
+              name="phone"
+            />
+          </div>
+          <div class="input-box">
+            <span class="text">Password</span>
+            <input type="text" placeholder="Please enter your pass" name="password" id="password" />
+          </div>
+          <div class="input-box">
+            <span class="text">Confirm Password </span>
+            <input
+              id="confirmpass"
+              type="password"
+              placeholder="Confirm your password"
+            />
+            
+          </div>
+        </div>
+        <div class="container">
+<input type="radio" name="gender" value="male" id="circle-1" {% if user.gender == 'male' %} checked {% endif %} />
+<input type="radio" name="gender" value="female" id="circle-2" {% if user.gender == 'female' %}checked{% endif %} />
+<input type="radio" name="gender" value="other" id="circle-3" {% if user.gender == 'other' %}checked{% endif %} />
+
+
+          <span class="gender">Gender</span>
+          <div class="category">
+            <label for="circle-1">
+              <span class="circle one"></span>
+              <span class="male">Male</span>
+            </label>
+            <label for="circle-2">
+              <span class="circle two"></span>
+              <span class="female">Female</span>
+            </label>
+            <label for="circle-3">
+              <span class="circle three"></span>
+              <span class="other">Other</span>
+            </label>
+          </div>
+        </div>
+          <button class="btn" type="submit" name="" id="submit" >Update</button>
+        <script> 
+        function containsOnlyNumbers(str) {
+            return /^\d+$/.test(str);
+          }
+               var confirm=document.getElementById("confirmpass");
+               var pass=document.getElementById("password");
+               var btn=document.getElementById("submit");
+               var phone=document.getElementById("tel");
+               pass.addEventListener("keydown",()=>{
+                if(pass.value){
+                  confirm.setAttribute("required",true);
+                }
+                else{
+                  confirm.setAttribute("required",false);
+                }
+               })
+               btn.addEventListener("click",(e)=>{
+                if(pass.value!== confirm.value || containsOnlyNumbers(phone.value))
+                  e.preventDefault();
+               })
+        </script>
+      </form>
+      
+      <button class="delete" onclick="showPopup()">Delete Your Account</button>
+      <div id="popup" class="popup">
+        <div class="popup-content">
+        <img src="/assets/images/danger.jpg" alt="danger">
+          <h2 class="popup-title">Are You Sure You want To delete
+          <br>Your Account ?</h2>
+          <button class="cancel" onclick="hidePopup()" >Cancel</button>
+      <a href="{{ path('app_user_delete') }}" ><button class="deletebtn">Delete</button></a>
+      </div>
+        </div>
+      </div>
+    </section>
+  
+{% endblock %}

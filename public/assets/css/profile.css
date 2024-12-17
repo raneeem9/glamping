@@ -1,0 +1,288 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+}
+body {
+  background: rgb(243, 242, 239);
+  color: #000;
+}
+.home {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 70px 10% 0;
+}
+.home .home-detail {
+  max-width: 600px;
+}
+.home-detail h3 {
+  font-size: 32px;
+  font-weight: 700;
+  animation: slideTop 1s ease forwards;
+  opacity: 0;
+  animation-delay: 0.7s;
+}
+.home-detail h3:nth-of-type(2) {
+  margin-bottom: 30px;
+  animation: slideTop 1s ease forwards;
+  animation-delay: 2s;
+  opacity: 0;
+}
+span {
+  color: #ef6e12;
+}
+
+.home-detail h1 {
+  font-size: 56px;
+  font-weight: 700;
+  margin: -3px 0;
+  animation: slideRight 1s ease forwards;
+  animation-delay: 1s;
+  opacity: 0;
+}
+.home-detail p {
+  font-size: 16px;
+  animation: slideLeft 1s ease forwards;
+  animation-delay: 1s;
+  opacity: 0;
+}
+.home-detail .social-media a {
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #ef6e12;
+  border-radius: 50%;
+  color: #ef6e12;
+  background: transparent;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 15px 30px 0;
+  transition: 0.5s ease;
+  font-size: 19px;
+  animation: slideLeft 1s ease forwards;
+  animation-delay: calc(0.2s * var(--vlr));
+  opacity: 0;
+}
+
+.social-media a:hover {
+  background: #ef6e12;
+  color: black;
+  box-shadow: 0 0 20px #ef6e12;
+}
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: #ef6e12;
+  color: rgb(243, 242, 239);
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 1px;
+  transition: 0.5s ease;
+  cursor: pointer;
+  animation: slideTop 1s ease forwards;
+  animation-delay: 2s;
+  opacity: 0;
+  margin-right: 12px;
+}
+.btn:hover {
+  background: rgb(243, 242, 239);
+  color: #ef6e12;
+  border: 1px solid #ef6e12;
+}
+/*************** the default image and the link ************/
+.profile-photo {
+  margin-left: 200px;
+}
+img {
+  width: 400px;
+  height: 400px;
+  margin-right: 20px;
+  border-radius: 50%;
+  animation: Zoom 1s ease forwards;
+  animation-delay: 2s;
+  opacity: 0;
+  background-size: cover;
+  background-position: center;
+}
+.profile-photo .edit {
+  color: #ef6e12;
+  animation: Shown 1s ease forwards;
+  animation-delay: 2.5s;
+  opacity: 0;
+  font-weight: 500;
+  margin-left: 70px;
+  margin-top: 20px;
+  font-size: 20px;
+  border: none;
+}
+.profile-photo .edit:hover {
+  text-decoration: underline;
+  background: rgb(243, 242, 239);
+  font-weight: 600;
+  cursor: pointer;
+}
+/* the popup code */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 999;
+}
+
+.popup-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 25px;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 20px;
+  color: white;
+  background-color: #ef6e12;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+.close-btn:hover {
+  background: white;
+  color: #ef6e12;
+  border: 1px solid #ef6e12;
+}
+/*the popup content */
+.popup h2 {
+  animation: slideTop 1s ease forwards;
+  opacity: 0;
+  margin-bottom: 20px;
+  font-size: 32px;
+  font-weight: 700;
+}
+.popup img {
+  animation-delay: 0s;
+  margin: 0;
+  margin-bottom: 40px;
+  width: 300px;
+  height: 300px;
+}
+input[type="file"] {
+  display: none;
+}
+
+/* Style the label element to look like a button */
+.file-input-label {
+  display: inline-block;
+  padding: 8px 16px;
+  background: #ef6e12;
+  color: rgb(243, 242, 239);
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 1px;
+  transition: 0.5s ease;
+  cursor: pointer;
+  margin-right: 20px;
+}
+ #submit-btn[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+/* Style the label element on hover */
+.file-input-label:hover {
+  background: white;
+  color: #ef6e12;
+  border: 1px solid #ef6e12;
+}
+.boutons {
+  display: flex;
+  align-items: center;
+  animation: Zoom 1s ease forwards;
+  opacity: 0;
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideLeft {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideTop {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideBottom {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes Zoom {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes Shown {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
